@@ -1,0 +1,28 @@
+name: Build Windows EXE
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Run PyInstaller
+        run: pyinstaller -F -w 1.py
+
+      - name: Upload EXE file
+        uses: actions/upload-artifact@v4
+        with:
+          name: pop-windows-exe
+          path: dist/1.exe
