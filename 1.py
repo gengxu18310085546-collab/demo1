@@ -1,7 +1,7 @@
 import tkinter as tk
 import random
 
-POPUP_COUNT = 30
+POPUP_COUNT = 130
 WIDTH = 220
 HEIGHT = 100
 BG_COLOR = "#FF477E"
@@ -23,7 +23,7 @@ for _ in range(POPUP_COUNT):
     win.attributes("-alpha", 0)  # 先完全隐藏
 
     label = tk.Label(win,
-                     text="哈哈哈哈哈哈哈哈哈~气死你",
+                     text="哈哈哈哈哈哈~气死你",
                      font=("黑体", 14, "bold"),
                      fg=TEXT_COLOR,
                      bg=BG_COLOR)
